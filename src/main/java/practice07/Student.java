@@ -9,7 +9,7 @@ public class Student extends Person{
     }
 
     public Klass getKlass() {
-        return klass;
+        return this.klass;
     }
 
     public String introduce() {
