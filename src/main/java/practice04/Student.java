@@ -13,7 +13,7 @@ public class Student extends Person {
     }
 
     public String introduce() {
-        return this.basicIntroduce + "I am a Student. I am at Class " + this.klass + ".";
+        return this.basicIntroduce + " I am a Student. I am at Class " + this.klass + ".";
     }
 }
 

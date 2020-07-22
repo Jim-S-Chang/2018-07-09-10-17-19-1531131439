@@ -8,7 +8,7 @@ public class Person {
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
-        this.basicIntroduce = introduce();
+        this.basicIntroduce = "My name is " + this.name + ". I am " + this.age + " years old.";
     }
 
     public String getName() {
@@ -20,6 +20,6 @@ public class Person {
     }
 
     public String introduce() {
-        return "My name is " + this.name + ". I am " + this.age + " years old.";
+        return basicIntroduce;
     }
 }

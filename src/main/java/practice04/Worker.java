@@ -5,7 +5,7 @@ public class Worker extends Person {
         super(name, age);
     }
     public String introduce() {
-        return this.basicIntroduce + "I am a Worker. I have a job.";
+        return this.basicIntroduce + " I am a Worker. I have a job.";
     }
 }
 
