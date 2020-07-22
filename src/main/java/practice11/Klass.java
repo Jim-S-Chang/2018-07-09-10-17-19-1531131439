@@ -3,11 +3,11 @@ package practice11;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Klass {
+public class Klass implements Observerable {
     private int number;
     private Student leader;
     private List<Student> members = new LinkedList<>();
-    private List<Observer> list;
+    private Teacher teacher;
 
     public Klass(int number) {
         this.number = number;
@@ -16,13 +16,13 @@ public class Klass {
         if (members.contains(leader)) {
             this.leader = leader;
         } else {
-            System.out.println("It is not one of us.");
+            System.out.print("It is not one of us.\n");
         }
     }
 
     public void appendMember(Student student) {
         this.members.add(student);
-        notifyObserver();
+        this.notifyObserver(student);
     }
 
     public Student getLeader() {
@@ -45,17 +45,20 @@ public class Klass {
         return false;
     }
 
-    public void registerObserver(Observer o) {
-        list.add(o);
+    @Override
+    public void registerObserver(Teacher o) {
+        teacher = o;
     }
 
+    @Override
     public void removeObserver(Observer o) {
-        if(!list.isEmpty()) {
-            list.remove(o);
+        if(this.teacher != null) {
+            this.teacher = null;
         }
     }
 
-    public void notifyObserver() {
-
+    @Override
+    public void notifyObserver(Student student) {
+        this.teacher.update(" I know " + student.getName() + " has joined Class " + this.number + ".");
     }
 }

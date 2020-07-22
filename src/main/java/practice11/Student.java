@@ -11,10 +11,10 @@ public class Student extends Person {
     }
 
     public String introduce() {
-        if (this.klass.getLeader().getId() == this.id){
-            return super.introduce() + "I am a Student. I am Leader of Class " + this.klass + ".";
+        if (this.klass.getLeader() != null && this.klass.getLeader().getId() == this.id){
+            return super.introduce() + " I am a Student. I am Leader of Class " + this.klass.getNumber() + ".";
         } else {
-            return super.introduce() + "I am a Student. I am at Class " + this.klass + ".";
+            return super.introduce() + " I am a Student. I am at Class " + this.klass.getNumber() + ".";
         }
     }
 }

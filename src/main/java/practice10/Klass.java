@@ -15,7 +15,7 @@ public class Klass {
         if (members.contains(leader)) {
             this.leader = leader;
         } else {
-            System.out.println("It is not one of us.");
+            System.out.print("It is not one of us.\n");
         }
     }
 
@@ -35,11 +35,10 @@ public class Klass {
         return number;
     }
     public boolean isIn(Student student) {
-        for (int i = 0; i < members.size(); i++) {
-            if (student.getId() == members.get(i).getId()) {
-                return true;
-            }
+        if (members.contains(student)) {
+            return true;
+        } else {
+            return false;
         }
-        return false;
     }
 }
